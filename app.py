@@ -116,9 +116,9 @@ section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {{
 }}
 
 /* ── Main content ── */
-.main {{
-    flex: 1; padding: 24px;
-    min-height: 100vh;
+.block-container {{
+    padding: 24px !important;
+    max-width: 100% !important;
     background: #0A0A1A;
 }}
 
@@ -594,8 +594,7 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-# ── Main wrapper ──────────────────────────────────────────────────────────────
-st.markdown('<div class="main">', unsafe_allow_html=True)
+# ── Main content ──────────────────────────────────────────────────────────────
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  HOME PAGE
@@ -632,16 +631,9 @@ if page == "Home":
         """, unsafe_allow_html=True)
 
     with c2:
-        # Profile photo + about
+        # About Me (no profile photo)
         st.markdown(f"""
-        <div class="card" style="text-align:center;padding-bottom:16px;">
-          <div style="display:flex;justify-content:center;margin-bottom:16px;">
-            <div class="profile-glow">
-              <div class="profile-inner">
-                <img class="profile-img" src="{PROFILE_SRC}" alt="Gowtam R E"/>
-              </div>
-            </div>
-          </div>
+        <div class="card" style="padding-bottom:16px;">
           <div class="sh-title" style="justify-content:flex-start;margin-bottom:10px;">
             <span>👤</span><span>About Me</span>
           </div>
@@ -703,8 +695,8 @@ if page == "Home":
 
     st.markdown("<div style='height:16px;'></div>", unsafe_allow_html=True)
 
-    # Row 2: Projects | Timeline | Tech Stack | GitHub Analytics
-    c4, c5, c6, c7 = st.columns([1.4, 1, 0.8, 0.9], gap="small")
+    # Row 2: Projects | Timeline | Tech Stack
+    c4, c5, c6 = st.columns([1.4, 1, 1], gap="small")
 
     with c4:
         proj_html = '<div class="sh"><div class="sh-title"><span>📁</span><span>Projects</span></div><a class="sh-link" href="#">View All Projects →</a></div>'
@@ -780,37 +772,7 @@ if page == "Home":
         st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
         st.markdown('<a class="sh-link" style="display:flex;justify-content:center;padding:4px 0;" href="#">View Full Tech Stack →</a></div>', unsafe_allow_html=True)
 
-    with c7:
-        contrib_cells = contrib_heatmap()
-        st.markdown(f"""
-        <div class="card">
-          <div class="sh-title" style="margin-bottom:12px;"><span>📊</span><span>GitHub Analytics</span></div>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:14px;">
-            <div class="gh-stat"><div class="gh-num">12+</div><div class="gh-lbl">Repositories</div></div>
-            <div class="gh-stat"><div class="gh-num">200+</div><div class="gh-lbl">Contributions</div></div>
-            <div class="gh-stat"><div class="gh-num">45+</div><div class="gh-lbl">Stars</div></div>
-            <div class="gh-stat"><div class="gh-num">15+</div><div class="gh-lbl">Followers</div></div>
-          </div>
-          <div style="font-size:10px;color:rgba(230,237,243,0.3);margin-bottom:6px;font-family:'JetBrains Mono',monospace;">Contribution Activity</div>
-          <div style="display:grid;grid-template-columns:repeat(26,1fr);gap:2px;">
-            {contrib_cells}
-          </div>
-          <div style="margin-top:10px;">
-            <div style="font-size:10px;color:rgba(230,237,243,0.3);margin-bottom:6px;font-family:'JetBrains Mono',monospace;">Top Languages</div>
-            <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;font-size:9px;font-family:'JetBrains Mono',monospace;color:rgba(230,237,243,0.5);">
-              <span style="color:#3572A5;">Python</span> 45%
-              <span style="color:#F1E05A;margin-left:6px;">JS</span> 20%
-              <span style="color:#E34C26;margin-left:6px;">HTML</span> 15%
-              <span style="margin-left:6px;">Others</span> 20%
-            </div>
-            <div style="height:6px;border-radius:3px;background:rgba(255,255,255,0.06);margin-top:5px;overflow:hidden;">
-              <div style="height:100%;width:45%;background:#3572A5;border-radius:3px;display:inline-block;"></div>
-              <div style="height:100%;width:20%;background:#F1E05A;border-radius:3px;display:inline-block;"></div>
-              <div style="height:100%;width:15%;background:#E34C26;border-radius:3px;display:inline-block;"></div>
-            </div>
-          </div>
-        </div>
-        """, unsafe_allow_html=True)
+
 
     st.markdown("<div style='height:16px;'></div>", unsafe_allow_html=True)
 
@@ -1157,13 +1119,6 @@ elif page == "About":
     with c1:
         st.markdown(f"""
         <div class="card" style="text-align:center;">
-          <div style="display:flex;justify-content:center;margin-bottom:16px;">
-            <div class="profile-glow">
-              <div class="profile-inner">
-                <img class="profile-img" src="{PROFILE_SRC}" alt="Gowtam R E"/>
-              </div>
-            </div>
-          </div>
           <div style="font-size:22px;font-weight:700;margin-bottom:4px;">Gowtam R E</div>
           <div style="font-family:JetBrains Mono,monospace;font-size:12px;color:#A78BFA;margin-bottom:12px;">AI Engineer · Data Engineer · Full Stack Developer</div>
           <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:5px;margin-bottom:14px;">
@@ -1204,5 +1159,4 @@ elif page == "About":
         </div>
         """, unsafe_allow_html=True)
 
-# ── Close main ────────────────────────────────────────────────────────────────
-st.markdown('</div>', unsafe_allow_html=True)
+# ── End ───────────────────────────────────────────────────────────────────────
