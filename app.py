@@ -695,8 +695,8 @@ if page == "Home":
 
     st.markdown("<div style='height:16px;'></div>", unsafe_allow_html=True)
 
-    # Row 2: Projects | Timeline | Tech Stack
-    c4, c5, c6 = st.columns([1.4, 1, 1], gap="small")
+    # Row 2: Projects | Tech Stack
+    c4, c6 = st.columns([1.5, 1], gap="small")
 
     with c4:
         proj_html = '<div class="sh"><div class="sh-title"><span>📁</span><span>Projects</span></div><a class="sh-link" href="#">View All Projects →</a></div>'
@@ -719,24 +719,6 @@ if page == "Home":
             </div>"""
         proj_html += '</div>'
         st.markdown(f'<div class="card">{proj_html}</div>', unsafe_allow_html=True)
-
-    with c5:
-        tl_html = '<div class="sh"><div class="sh-title"><span>📅</span><span>Experience Timeline</span></div></div>'
-        for i, t in enumerate(TIMELINE):
-            is_last = (i == len(TIMELINE)-1)
-            tl_html += f"""
-            <div class="timeline-item">
-              <div class="tl-year">{t['year']}</div>
-              <div class="tl-dot-col">
-                <div class="tl-dot"></div>
-                {'<div class="tl-line"></div>' if not is_last else ''}
-              </div>
-              <div class="tl-content">
-                <div class="tl-title">{t['title']}</div>
-                <div class="tl-desc">{t['desc']}</div>
-              </div>
-            </div>"""
-        st.markdown(f'<div class="card">{tl_html}</div>', unsafe_allow_html=True)
 
     with c6:
         # Tech Stack constellation (plotly)
