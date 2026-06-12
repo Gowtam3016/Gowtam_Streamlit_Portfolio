@@ -1,0 +1,17 @@
+[
+  {
+    "name": "SolarTrack Pro",
+    "tag": "IoT + Machine Learning",
+    "description": "Developed a full-stack IoT-based solar tracking system using ESP32, React, Node.js, MongoDB, and FastAPI, featuring real-time monitoring, historical analytics, machine learning-based angle prediction, and automated dual-axis control."
+  },
+  {
+    "name": "Wastewater Treatment Dashboard",
+    "tag": "IoT + WebSockets",
+    "description": "Developed a real-time IoT dashboard using ESP32, Node.js, and WebSockets to monitor wastewater quality (pH, turbidity, temperature) with a Random Forest ML classifier for automated water treatment classification and live actuator control."
+  },
+  {
+    "name": "MedAI Clinical System",
+    "tag": "AI Healthcare",
+    "description": "Developed a healthcare management platform using Python, FastAPI, and SQLite with AI-based medicine recommendations, patient risk analysis, prescription tracking, clinical record management, and RESTful APIs."
+  }
+]

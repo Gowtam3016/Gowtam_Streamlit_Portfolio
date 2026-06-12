@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Oracle Certified Foundations Associate",
+    "issuer": "Oracle University"
+  },
+  {
+    "name": "Artificial Intelligence Fundamentals",
+    "issuer": "IBM SkillsBuild"
+  },
+  {
+    "name": "Project Management Fundamentals",
+    "issuer": "IBM SkillsBuild"
+  },
+  {
+    "name": "Web Development Fundamentals",
+    "issuer": "IBM SkillsBuild"
+  },
+  {
+    "name": "HTML/CSS Essentials 2025",
+    "issuer": "Cisco Networking Academy"
+  },
+  {
+    "name": "ESP32 for IoT",
+    "issuer": "Udemy"
+  },
+  {
+    "name": "MongoDB Basics for Students",
+    "issuer": "MongoDB University"
+  }
+]
